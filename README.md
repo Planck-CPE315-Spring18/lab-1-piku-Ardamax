@@ -1,4 +1,11 @@
 # CPE 315 Lab 1 -- Piku
+Name: Larry Xu
+Status of lab: Complete
+Instructions: 
+   1. `gcc -o piku piku.s`
+   2. `./piku`
+Obstables:
+   * I didn't understand what printf was. Is it a built in function like PUTS??
 
 ## Things to include in your README
 

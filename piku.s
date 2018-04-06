@@ -1,6 +1,6 @@
     .syntax unified
 
-    @ --------------------------------
+    @@ --------------------------------
     .global main
 main:
     @ Stack the return address (lr) in addition to a dummy register (ip) to
@@ -8,7 +8,11 @@ main:
     push    {ip, lr}
 
     @ Load the argument and perform the call. This is like 'printf("...")' in C.
-    ldr     r0, =message
+    ldr     r0, =line1
+    bl      printf
+    ldr     r0, =line2
+    bl      printf
+    ldr     r0, =line3
     bl      printf
 
     @ Exit from 'main'. This is like 'return 0' in C.
@@ -20,5 +24,9 @@ main:
     @ --------------------------------
     @ Data for the printf call. The GNU assembler's ".asciz" directive
     @ automatically adds a NULL character termination.
-message:
-    .asciz  "Hello, world.\n"
+line1:
+    .asciz  "My, I wonder why\n"
+line2:
+    .asciz  "We relate delicious pie\n"
+line3:
+    .asciz  "To Raspberry Pi\n"
